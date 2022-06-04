@@ -7,7 +7,10 @@ terraform {
   }
 }
 
-provider "docker" {}
+provider "docker" {
+  version = "~> 2.6"
+  host    = "npipe:////.//pipe//docker_engine"
+}
 
 resource "docker_image" "nginx" {
   name         = "nginx:latest"
